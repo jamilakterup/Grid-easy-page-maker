@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+
+    <style>
+        .header {
+            grid-area: header;
+        }
+
+        .nav {
+            grid-area: nav;
+        }
+
+        .main {
+            grid-area: main;
+        }
+
+        .aside {
+            grid-area: aside;
+        }
+
+        .add {
+            grid-area: add;
+        }
+
+        .footer {
+            grid-area: footer;
+        }
+
+        .grid-container {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr 4fr 1fr;
+            grid-template-areas:
+                "header header header header"
+                "nav    main    main    aside"
+                "nav    main    main    add"
+                "footer footer footer footer"
+
+            ;
+        }
+
+        .header,
+        .nav,
+        .main,
+        .aside,
+        .add,
+        .footer {
+            background-color: lightblue
+        }
+
+        @media screen and (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "header "
+                    "nav "
+                    "main "
+                    "aside"
+                    "add"
+                    "footer"
+
+                ;
+            }
+        }
+    </style>
+</head>
+
+<body class="grid-container">
+    <header class="header">
+        <h1>This is header</h1>
+    </header>
+    <nav class="nav">
+        <ul>
+            <li><a href="#">nav-1</a></li>
+            <li><a href="#">nav-2</a></li>
+            <li><a href="#">nav-3</a></li>
+        </ul>
+    </nav>
+    <main class="main">
+        <article>
+            <h3>Article-1</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, recusandae minima
+                modi porro aut sint reiciendis consectetur quas blanditiis libero corporis, atque
+                esse debitis vitae delectus animi. Fugiat quae iure ducimus nisi unde pariatur quis
+                dolore quasi, omnis qui eius optio nam enim earum velit quo aspernatur, eum minima
+                eos.</p>
+        </article>
+        <article>
+            <h3>Article-2</h3>
+            <p>Reprehenderit perferendis modi quisquam, aperiam suscipit dolorum eaque consequuntur
+                id quas, molestiae, animi ab aliquam laudantium rem fugiat nostrum. Itaque, sint ex
+                nisi facere corporis nulla ad asperiores eos modi, accusantium optio eius harum
+                quaerat dolores? Similique nostrum repellat voluptas reprehenderit quia itaque
+                corporis, dolores porro, magni architecto ipsa tenetur.</p>
+        </article>
+    </main>
+    <aside class="aside">
+        <h3>Side bar</h3>
+        <ul>
+            <li><a href="">side bar-1</a></li>
+            <li><a href="">side bar-2</a></li>
+            <li><a href="">side bar-3</a></li>
+        </ul>
+    </aside>
+    <div class="add">
+        <h3>advertisement</h3>
+    </div>
+    <footer class="footer">
+        <p>footer</p>
+    </footer>
+</body>
+
+</html>
